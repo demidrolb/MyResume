@@ -1,0 +1,49 @@
+CREATE DATABASE My_test_db;
+#Создать базу данных с именем "My_test_db"
+
+USE My_test_db;
+#Войти в базу данных "My_test_db"
+
+CREATE TABLE users(
+#Создать таблицу с именем "users"
+
+id int (10) AUTO_INCREMENT,
+#Создать столбец с числовым типом данных(до 10 знаков) и увеличением на +1 новых данных
+firstname varchar (50) NOT NULL,
+#Создать столбец со строковым значением данных(до 50 знаков), без пустых значений
+lastname varchar (50) NOT NULL,
+#Создать столбец со строковым значением данных(до 50 знаков), без пустых значений
+email varchar (100) NOT NULL,
+#Создать столбец со строковым значением данных(до 100 знаков), без пустых значений
+PRIMARY KEY (id)
+#Привязать первичный ключ
+);
+
+
+CREATE TABLE cart (
+id INT(30) PRIMARY KEY NOT NULL,
+number varchar (16),
+users_id INT,
+FOREIGN KEY (users_id) REFERENCES users (id)
+#Создать внешний ключ для таблицы cart привязав к таблице users
+);
+
+INSERT INTO users VALUES (1, 'Peter', 'Yasnecov', 'q123@mail.ru');
+#Добавить в страницу users ЗНАЧЕНИЯ (..., '...', '...', '...');
+
+SELECT * FROM users WHERE id>= 12 ORDER BY lastname DESC;
+# Вывести все значения таблицы users ГДЕ id>=12 ОТСОРТИРОВАВ по убывающему значению lastname;
+
+
+SELECT * FROM users WHERE firstname LIKE 'P%';
+# Вывести все значения таблицы users ГДЕ firstname ИМЕЕТ первую букву и неограниченное число символов после неё 'P%'
+
+SELECT u.id, u.lastname, c.number FROM users u LEFT JOIN cart c ON u.id=c.users_id;
+# Вывести значения из 2 таблиц с помощью ЛЕВОСТОРОННЕГО ОБЪЕДИНЕНИЯ таблиц
+
+
+
+
+
+
+
