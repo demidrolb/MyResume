@@ -40,7 +40,7 @@ SELECT * FROM users WHERE firstname LIKE 'P%';
 
 SELECT u.id, u.lastname, c.number FROM users u LEFT JOIN cart c ON u.id=c.users_id;
 # Вывести значения из 2 таблиц с помощью ЛЕВОСТОРОННЕГО ОБЪЕДИНЕНИЯ таблиц.
-
+#
 
 
 
