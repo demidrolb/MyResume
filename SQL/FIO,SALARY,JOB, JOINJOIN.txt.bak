@@ -1,0 +1,28 @@
+create table FIO_person (
+id int (10) PRIMARY KEY AUTO_INCREMENT,
+FIO varchar(50) NOT NULL,
+);
+
+INSERT INTO FIO_person VALUES (1, 'Mikhail Dem Yu'), (2, 'PETER');
+
+CREATE TABLE Salary_ID (
+id INT(30) PRIMARY KEY AUTO_INCREMENT,
+VALUE varchar (50),
+PERSON_id INT (10),
+FOREIGN KEY Salary_ID (PERSON_id) REFERENCES FIO_person (id)
+);
+
+INSERT INTO Salary_ID VALUES (1,'12000'1), (2, 9000,2);
+
+CREATE TABLE JobPosition (
+Position_ID int (30) PRIMARY KEY AUTO_INCREMENT,
+Name_Position varchar (50),
+Duration varchar (10),
+Person_id INT,
+FOREIGN KEY JobPosition (Person_id) REFERENCES FIO_person (id)
+);
+
+INSERT INTO JobPosition VALUES (1, 'Mentor', '7', 1), (2,'Student', 2);
+
+
+SELECT F.FIO, S.VALUE, J.Name_Position FROM fio_person F JOIN Salary_ID S ON F.ID = S.PERSON_id JOIN JobPosition J ON F.ID = J.Person_id WHERE S.VALUE > 10000 AND J.Name_Position = 'Mentor';
