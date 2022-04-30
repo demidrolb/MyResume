@@ -1,0 +1,52 @@
+C:\Users\acer>newman run https://www.getpostman.com/collections/c724f2833358752d59a5
+newman
+
+PetApi3004
+
+→ CreatePet
+  POST https://petstore.swagger.io/v2/pet [200 OK, 597B, 642ms]
+  √  Status code is 200
+  √  Successful POST request
+  √  Response time is less than 200ms
+  √  Status code name has string
+
+→ IdPet
+  GET https://petstore.swagger.io/v2/pet/826 [200 OK, 597B, 142ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Content-Type is present
+
+→ PutPet
+  PUT https://petstore.swagger.io/v2/pet [200 OK, 603B, 141ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Content-Type is present
+
+→ DelPet
+  DELETE https://petstore.swagger.io/v2/pet/826 [200 OK, 371B, 138ms]
+  √  Status code is 200
+  √  Response time is less than 200ms
+  √  Status code name has string
+  √  Body is correct
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   0 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  16 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 1528ms                                         │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 864B (approx)                                 │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 265ms [min: 138ms, max: 642ms, s.d.: 217ms] │
+└────────────────────────────────────────────────────────────────────┘
